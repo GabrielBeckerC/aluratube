@@ -1,8 +1,12 @@
+import React from "react";
 import config from "../config.json";
-import styled, { StyleSheetManager } from "styled-components";
+import styled from "styled-components";
 import { CSSReset } from "../src/components/CSSReset";
 import Menu from "../src/components/Menu";
 import { StyledTimeline } from "../src/components/Timeline";
+
+import Banner from "./../src/assets/images/banner.jpg";
+import { Favorites } from "../src/components/Favorites";
 
 function HomePage() {
   const estilosDaHomePage = {
@@ -14,8 +18,9 @@ function HomePage() {
       <CSSReset />
       <div style={estilosDaHomePage}>
         <Menu />
-        <Header />
+        <Header link={Banner.src} />
         <Timeline playlists={config.playlists} />
+        <Footer/>
       </div>
     </>
   );
@@ -23,30 +28,32 @@ function HomePage() {
 
 export default HomePage;
 
-
-
 const StyledHeader = styled.div`
-  img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
+  .banner {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
   }
   .user-info {
-    margin-top: 50px;
     display: flex;
     align-items: center;
     width: 100%;
     padding: 16px 32px;
     gap: 16px;
+    > img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
   }
 `;
 
-function Header() {
+function Header({ link }) {
   return (
     <StyledHeader>
-      {/* <img src="banner"/> */}
+      <img className="banner" src={link} alt="banner-codigo" />
       <section className="user-info">
-        <img src={`https://github.com/${config.github}.png`} />
+        <img src={`https://github.com/${config.github}.png`}  alt={config.name}/>
         <div>
           <h2>{config.name}</h2>
           <p>{config.description}</p>
@@ -79,5 +86,18 @@ function Timeline(props) {
         );
       })}
     </StyledTimeline>
+  );
+}
+
+const StyledFooter = styled.div`
+  padding: 16px 32px;
+`;
+
+function Footer() {
+  return (
+    <StyledFooter>
+      <h2>Favoritos</h2>
+      <Favorites />
+    </StyledFooter>
   );
 }

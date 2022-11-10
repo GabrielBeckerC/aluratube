@@ -130,5 +130,16 @@
         "thumb": "https://img.youtube.com/vi/0JWMVc1CqpA/hqdefault.jpg"
       }
     ]
-  }
+  },
+  "favorites-cards": [
+    {
+      "github": "peas"
+    },
+    {
+      "github": "omariosouto"
+    },
+    {
+      "github": "developedbyed"
+    }
+  ]
 }
