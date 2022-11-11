@@ -13,7 +13,7 @@ function HomePage() {
     // backgroundColor: "red"
   };
 
-  const [valorDoFiltro, setValorDoFiltro] = useState("Frost");
+  const [valorDoFiltro, setValorDoFiltro] = useState("");
   return (
     <>
       <CSSReset />
