@@ -16,6 +16,9 @@ const StyledFavorites = styled.div`
     height: 100px;
     border-radius: 50%;
   }
+  span {
+    color: ${({ theme }) => theme.textColorBase};
+  }
 `;
 
 export function Favorites({}) {
@@ -25,7 +28,7 @@ export function Favorites({}) {
     <StyledFavorites>
       {favorites.map((card) => {
         return (
-          <a href={`https:///github.com/${card.github}`} target="_blank" >
+          <a href={`https:///github.com/${card.github}`} target="_blank">
             <img
               src={`https://github.com/${card.github}.png`}
               alt={card.github}
