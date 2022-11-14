@@ -58,6 +58,8 @@ export default function RegisterVideo() {
               }}
               value={formCadastro.titulo}
               name="titulo"
+              required
+              minLength={10}
             />
             <input
               placeholder="URL"
@@ -66,6 +68,8 @@ export default function RegisterVideo() {
               }}
               value={formCadastro.url}
               name="url"
+              required
+              minLength={10}
             />
             <button type="submit"> Cadastrar </button>
           </div>
