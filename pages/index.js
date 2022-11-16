@@ -3,7 +3,7 @@ import config from "../config.json";
 import styled from "styled-components";
 import Menu from "../src/components/Menu";
 import { StyledTimeline } from "../src/components/Timeline";
-
+import { videoService } from "../src/components/services/videoService";
 import { Favorites } from "../src/components/Favorites";
 
 function HomePage() {
